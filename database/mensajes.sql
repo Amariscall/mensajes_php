@@ -1,3 +1,12 @@
+--
+-- Base de datos: `mensajes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mensaje`
+--
 
 DROP TABLE IF EXISTS `mensaje`;
 CREATE TABLE IF NOT EXISTS `mensaje` (
@@ -7,9 +16,13 @@ CREATE TABLE IF NOT EXISTS `mensaje` (
   `id_usuario` int(2) NOT NULL,
   PRIMARY KEY (`id_mensaje`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -19,8 +32,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `celular` bigint(10) NOT NULL,
   `clave` varchar(32) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Restricciones para tablas volcadas
+--
 
+--
+-- Filtros para la tabla `mensaje`
+--
 ALTER TABLE `mensaje`
   ADD CONSTRAINT `mensaje_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
