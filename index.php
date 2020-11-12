@@ -51,7 +51,7 @@
 	<body>
 		<header>
 			<h1>mensajes App</h1>
-			<h2>Inicio de sesión</h2>
+			<h2>Listado de mensajes</h2>
 		</header>
 		<section>
 			<div class="row">
